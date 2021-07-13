@@ -1,6 +1,5 @@
 const { Server } = require('_http_server');
 const { App } = require('./app');
-global.logger = console;
 
 class HttpServer extends Server {
   listen(port) {

@@ -1,23 +1,27 @@
 {
-  "name": "auth",
+  "name": "node-express-ejs",
+  "description": "node express ejs template SSR MVC",
+  "author": "<jobscale@users.noreply.github.com>",
   "version": "0.0.0",
-  "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ."
+    "start": "node .",
+    "lint": "eslint . && ejslint app/views",
+    "test": "npm run lint"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "jws": "^4.0.0"
   },
   "devDependencies": {
+    "ejs-lint": "^1.2.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "nodemon": "^2.0.12"
-  }
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "license": "MIT"
 }

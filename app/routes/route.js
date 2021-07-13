@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-class BaseRouter {
+class Route {
   constructor() {
     this.router = Router();
     this.handle = (...args) => this.router(...args);
@@ -14,5 +14,5 @@ class BaseRouter {
 }
 
 module.exports = {
-  BaseRouter,
+  Route,
 };
