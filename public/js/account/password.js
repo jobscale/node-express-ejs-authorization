@@ -36,6 +36,4 @@ class Password {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  new Password().trigger();
-});
+window.addEventListener('DOMContentLoaded', () => new Password().trigger());

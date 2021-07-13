@@ -47,6 +47,4 @@ class Loader {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Loader().trigger();
-});
+window.addEventListener('DOMContentLoaded', () => new Loader().trigger());
