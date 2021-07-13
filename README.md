@@ -27,14 +27,29 @@ npm start
 open http://127.0.0.1:3000/v1
 ```
 
+login<br>
+> user: wendy<br>
+> password: AS2P8AcBedZ
+
 ## Docker container
 
+- local build
 ```
 docker build . -t p3000
 docker run --name p3000 --rm -p 3000:3000 -it p3000
-
+```
+- container repository
+```
+docker run --name p3000 --rm -p 3000:3000 -it jobscale/node-express-ejs-authorization
+```
+- open
+```
 open http://127.0.0.1:3000/v1
 ```
+
+login<br>
+> user: wendy<br>
+> password: AS2P8AcBedZ
 
 ## Directory tree
 
