@@ -1,7 +1,7 @@
 {
   "name": "node-express-ejs",
   "description": "node express ejs template SSR MVC",
-  "author": "<jobscale@users.noreply.github.com>",
+  "author": "jobscale <jobscale@users.noreply.github.com>",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,14 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobscale/node-express-ejs-authorization.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jobscale/node-express-ejs-authorization/issues"
+  },
+  "homepage": "https://github.com/jobscale/node-express-ejs-authorization#readme",
   "license": "MIT"
 }
