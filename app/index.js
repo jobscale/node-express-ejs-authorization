@@ -34,7 +34,8 @@ class App {
     this.set('x-powered-by', false);
     this.use((req, res, next) => {
       res.header('access-control-allow-origin', `https://${req.headers.host}`);
-      res.header('x-powered-by', 'nginx');
+      res.header('server', 'acl-ingress-k8s');
+      res.header('x-powered-by', 'jsx.jp');
       next();
     });
   }
