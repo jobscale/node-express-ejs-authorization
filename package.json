@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node .",
     "lint": "eslint . && ejslint app/views",
+    "lint:fix": "eslint . --fix",
     "test": "npm run lint"
   },
   "dependencies": {

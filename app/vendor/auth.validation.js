@@ -5,12 +5,12 @@ module.exports = {
   register: {
     body: {
       email: Joi.string()
-        .email()
-        .required(),
+      .email()
+      .required(),
       password: Joi.string()
-        .required()
-        .min(6)
-        .max(128),
+      .required()
+      .min(6)
+      .max(128),
     },
   },
 
@@ -18,11 +18,11 @@ module.exports = {
   login: {
     body: {
       email: Joi.string()
-        .email()
-        .required(),
+      .email()
+      .required(),
       password: Joi.string()
-        .required()
-        .max(128),
+      .required()
+      .max(128),
     },
   },
 
@@ -38,8 +38,8 @@ module.exports = {
   refresh: {
     body: {
       email: Joi.string()
-        .email()
-        .required(),
+      .email()
+      .required(),
       refreshToken: Joi.string().required(),
     },
   },
@@ -48,8 +48,8 @@ module.exports = {
   sendPasswordReset: {
     body: {
       email: Joi.string()
-        .email()
-        .required(),
+      .email()
+      .required(),
     },
   },
 
@@ -57,12 +57,12 @@ module.exports = {
   passwordReset: {
     body: {
       email: Joi.string()
-        .email()
-        .required(),
+      .email()
+      .required(),
       password: Joi.string()
-        .required()
-        .min(6)
-        .max(128),
+      .required()
+      .min(6)
+      .max(128),
       resetToken: Joi.string().required(),
     },
   },
