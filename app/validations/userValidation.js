@@ -1,25 +1,25 @@
+const Joi = require('joi');
+
 class UserValidation {
   register(req, res, next) {
-    const { login, password } = req.body;
-    if (!login) {
-      res.status(400).json({ message: 'User Required' });
-      return;
-    }
-    if (!password) {
-      res.status(400).json({ message: 'Password Required' });
+    const { error } = Joi.object({
+      login: Joi.string().alphanum().max(30),
+      password: Joi.string().min(6).max(30),
+    }).validate(req.body);
+    if (error) {
+      res.status(400).json({ message: error.message });
       return;
     }
     next();
   }
 
   reset(req, res, next) {
-    const { login, password } = req.body;
-    if (!login) {
-      res.status(400).json({ message: 'User Required' });
-      return;
-    }
-    if (!password) {
-      res.status(400).json({ message: 'Password Required' });
+    const { error } = Joi.object({
+      login: Joi.string().alphanum().max(30),
+      password: Joi.string().min(6).max(30),
+    }).validate(req.body);
+    if (error) {
+      res.status(400).json({ message: error.message });
       return;
     }
     next();

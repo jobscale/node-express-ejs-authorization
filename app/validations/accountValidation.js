@@ -1,8 +1,12 @@
+const Joi = require('joi');
+
 class AccountValidation {
   password(req, res, next) {
-    const { password } = req.body;
-    if (!password) {
-      res.status(400).json({ message: 'Password Required' });
+    const { error } = Joi.object({
+      password: Joi.string().max(30),
+    }).validate(req.body);
+    if (error) {
+      res.status(400).json({ message: error.message });
       return;
     }
     next();
