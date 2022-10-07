@@ -1,9 +1,4 @@
 global.logger = console;
-global.promise = () => {
-  const prom = {};
-  prom.pending = new Promise((...args) => [prom.resolve, prom.reject] = args);
-  return prom;
-};
 // eslint-disable-next-line
 Object(Date).prototype.toLocaleString = function () {
   const dt = this;
