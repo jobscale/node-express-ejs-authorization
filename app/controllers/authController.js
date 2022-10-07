@@ -1,6 +1,8 @@
 const path = require('path');
 const { authService } = require('../services/authService');
 
+const baseUrl = '/v1';
+
 class AuthController {
   index(req, res) {
     authService.now()

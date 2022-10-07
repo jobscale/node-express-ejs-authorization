@@ -3,7 +3,6 @@ module.exports = {
   globals: {
     logger: 'readonly',
     promise: 'readonly',
-    baseUrl: 'readonly',
     fetch: 'readonly',
   },
   rules: {

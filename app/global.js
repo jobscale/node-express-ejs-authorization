@@ -1,5 +1,4 @@
 global.logger = console;
-global.baseUrl = '/v1';
 global.promise = () => {
   const prom = {};
   prom.pending = new Promise((...args) => [prom.resolve, prom.reject] = args);
