@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>List of User</title>
-  <link rel='stylesheet' href='/v1/css/style.css' />
-  <link rel="stylesheet" href="/v1/css/form.css">
+  <link rel='stylesheet' href='/css/style.css' />
+  <link rel="stylesheet" href="/css/form.css">
   <%- include('../menu/head') %>
 </head>
 <body>
@@ -13,9 +13,14 @@
     <h1>List of User</h1>
     <hr>
     <div><ol type="I"><%
-      users.forEach(user => {
-        %><li><%= user.login %></li><%
-      })
+      users.forEach(user => {%>
+        <li>
+          <ol class="horizontal">
+            <li><%= user.login %></li>
+            <li><%= user.lastLogin ? new Date(user.lastLogin).toLocaleString() : '-' %></li>
+          </ol>
+        </li>
+      <%})
     %></ol></div>
   </div>
   <%- include('../menu/body') %>

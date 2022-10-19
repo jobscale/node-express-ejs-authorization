@@ -1,11 +1,11 @@
+const os = require('os');
 const path = require('path');
-const createError = require('http-errors');
+const createHttpError = require('http-errors');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-require('./global');
-const { topRoute } = require('./routes/topRoute');
+require('@jobscale/core');
+const { route } = require('./route');
 
-const baseUrl = '/v1';
 const app = express();
 
 class App {
@@ -24,15 +24,18 @@ class App {
     app.set('etag', false);
     app.set('x-powered-by', false);
     app.use((req, res, next) => {
-      res.header('access-control-allow-origin', `https://${req.headers.host}`);
-      res.header('server', 'acl-ingress-k8s');
-      res.header('x-powered-by', 'jsx.jp');
+      const origin = req.headers.origin || `${req.protocol}://${req.headers.host}`;
+      res.header('Access-Control-Allow-Origin', `${origin}`);
+      res.header('Access-Control-Allow-Methods', 'GET, POST, HEAD');
+      res.header('Access-Control-Allow-Headers', 'Content-Type');
+      res.header('Server', 'acl-ingress-k8s');
+      res.header('X-Backend-Host', os.hostname());
       next();
     });
   }
 
   usePublic() {
-    const docs = path.resolve(process.cwd(), 'public');
+    const docs = path.resolve(process.cwd(), 'docs');
     app.use(express.static(docs));
   }
 
@@ -60,19 +63,19 @@ class App {
   }
 
   useRoute() {
-    app.use(baseUrl, topRoute.router);
+    app.use('', route.router);
   }
 
   notfoundHandler() {
     app.use((req, res) => {
       const template = 'error/default';
       if (req.method === 'GET') {
-        const e = createError(404);
+        const e = createHttpError(404);
         res.locals.e = e;
         res.status(e.status).render(template);
         return;
       }
-      const e = createError(501);
+      const e = createHttpError(501);
       res.status(e.status).json({ message: e.message });
     });
   }
