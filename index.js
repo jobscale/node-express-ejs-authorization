@@ -1,3 +1,4 @@
+const { logger } = require('@jobscale/logger');
 const { App } = require('./app');
 const { database } = require('./config/database');
 const User = require('./app/models/User');
@@ -22,7 +23,8 @@ const syncDB = async () => {
   })
   .then(users => {
     if (users.length !== 0) return [];
-    return sampleUsers();
+    return sampleUsers()
+    .catch(e => logger.error(e.message));
   });
 };
 
@@ -35,14 +37,14 @@ const main = async () => {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
   };
-  app.listen(options, () => {
+  app.listen(options, () => dbSync.then(() => {
     logger.info(JSON.stringify({
       Server: 'Started',
       'Listen on': `http://127.0.0.1:${options.port}`,
     }, null, 2));
     prom.resolve(app);
-  });
-  return Promise.all([prom.pending, dbSync]);
+  }));
+  return prom.pending;
 };
 
 module.exports = {
