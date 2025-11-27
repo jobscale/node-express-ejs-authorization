@@ -1,7 +1,7 @@
 const createHttpError = require('http-errors');
 const User = require('../models/User');
-const { auth } = require('.');
 const { createHash } = require('../user');
+const { auth } = require('.');
 
 const jwtSecret = 'node-express-ejs';
 
