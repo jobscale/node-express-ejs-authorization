@@ -1,7 +1,7 @@
 {
   "name": "node-express-ejs",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "node express ejs joi sequelize sqlite3",
   "author": "jobscale <jobscale@users.noreply.github.com>",
   "license": "MIT",
