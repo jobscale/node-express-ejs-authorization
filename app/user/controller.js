@@ -1,6 +1,6 @@
-const path = require('path');
-const { logger } = require('@jobscale/logger');
-const { userService } = require('./service');
+import path from 'path';
+import { logger } from '@jobscale/logger';
+import { userService } from './service.js';
 
 class UserController {
   async page(req, res) {
@@ -48,7 +48,5 @@ class UserController {
   }
 }
 
-module.exports = {
-  UserController,
-  userController: new UserController(),
-};
+export const userController = new UserController();
+export default { UserController, userController };

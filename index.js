@@ -1,8 +1,8 @@
-const { logger } = require('@jobscale/logger');
-const { App } = require('./app');
-const { database } = require('./config/database');
-const User = require('./app/models/User');
-const { createHash } = require('./app/user');
+import { logger } from '@jobscale/logger';
+import { App } from './app.js';
+import { database } from './config/database.js';
+import User from './app/models/User.js';
+import { createHash } from './app/user.js';
 
 const sampleUsers = () => {
   const loader = require;
@@ -47,6 +47,6 @@ const main = async () => {
   return prom.pending;
 };
 
-module.exports = {
+export default {
   server: main(),
 };

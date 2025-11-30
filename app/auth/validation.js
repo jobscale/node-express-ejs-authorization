@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 class AuthValidation {
   login(req, res, next) {
@@ -14,7 +14,5 @@ class AuthValidation {
   }
 }
 
-module.exports = {
-  AuthValidation,
-  authValidation: new AuthValidation(),
-};
+export const authValidation = new AuthValidation();
+export default { AuthValidation, authValidation };

@@ -4,7 +4,5 @@ class Service {
   }
 }
 
-module.exports = {
-  Service,
-  service: new Service(),
-};
+export const service = new Service();
+export default { Service, service };

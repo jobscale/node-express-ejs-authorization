@@ -1,7 +1,7 @@
-const createHttpError = require('http-errors');
-const User = require('../models/User');
-const { createHash } = require('../user');
-const { auth } = require('.');
+import createHttpError from 'http-errors';
+import User from '../models/User.js';
+import { createHash } from '../user.js';
+import { auth } from './index.js';
 
 const jwtSecret = 'node-express-ejs';
 
@@ -43,7 +43,5 @@ class AuthService {
   }
 }
 
-module.exports = {
-  AuthService,
-  authService: new AuthService(),
-};
+export const authService = new AuthService();
+export default { AuthService, authService };

@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 class ApiValidation {
   slack(req, res, next) {
@@ -20,7 +20,5 @@ class ApiValidation {
   }
 }
 
-module.exports = {
-  ApiValidation,
-  apiValidation: new ApiValidation(),
-};
+export const apiValidation = new ApiValidation();
+export default { ApiValidation, apiValidation };

@@ -1,5 +1,5 @@
-const os = require('os');
-const { Slack } = require('@jobscale/slack');
+import os from 'os';
+import { Slack } from '@jobscale/slack';
 
 class ApiService {
   slack(rest) {
@@ -45,7 +45,5 @@ class ApiService {
   }
 }
 
-module.exports = {
-  ApiService,
-  apiService: new ApiService(),
-};
+export const apiService = new ApiService();
+export default { ApiService, apiService };

@@ -1,6 +1,6 @@
-const dayjs = require('dayjs');
-const { logger } = require('@jobscale/logger');
-const { authService } = require('./service');
+import dayjs from 'dayjs';
+import { logger } from '@jobscale/logger';
+import { authService } from './service.js';
 
 class AuthController {
   index(req, res) {
@@ -54,7 +54,5 @@ class AuthController {
   }
 }
 
-module.exports = {
-  AuthController,
-  authController: new AuthController(),
-};
+export const authController = new AuthController();
+export default { AuthController, authController };

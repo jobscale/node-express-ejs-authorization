@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const { accountController } = require('./controller');
-const { accountValidation } = require('./validation');
+import { Router } from 'express';
+import { accountController } from './controller.js';
+import { accountValidation } from './validation.js';
 
 class AccountRoute {
   constructor() {
@@ -18,7 +18,5 @@ class AccountRoute {
   }
 }
 
-module.exports = {
-  AccountRoute,
-  accountRoute: new AccountRoute(),
-};
+export const accountRoute = new AccountRoute();
+export default { AccountRoute, accountRoute };

@@ -1,10 +1,10 @@
-const os = require('os');
-const path = require('path');
-const createHttpError = require('http-errors');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const { logger } = require('@jobscale/logger');
-const { route } = require('./route');
+import os from 'os';
+import path from 'path';
+import createHttpError from 'http-errors';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import { logger } from '@jobscale/logger';
+import { route } from './route.js';
 
 const app = express();
 
@@ -25,7 +25,7 @@ class App {
     app.set('x-powered-by', false);
     app.use((req, res, next) => {
       const referer = req.headers.referer && req.headers.referer.match(/https?:\/\/[a-z0-9.:]+/g);
-      const origin = req.headers.origin || (referer && referer[0]) || `${req.protocol}://${req.headers.host}`;
+      const origin = req.headers.origin || referer && referer[0] || `${req.protocol}://${req.headers.host}`;
       res.header('Access-Control-Allow-Origin', `${origin}`);
       res.header('Access-Control-Allow-Methods', 'GET, POST, HEAD');
       res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -108,6 +108,6 @@ class App {
   }
 }
 
-module.exports = {
+export default {
   App,
 };

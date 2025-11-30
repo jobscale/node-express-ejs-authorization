@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const { apiController } = require('./controller');
-const { apiValidation } = require('./validation');
+import { Router } from 'express';
+import { apiController } from './controller.js';
+import { apiValidation } from './validation.js';
 
 class ApiRoute {
   constructor() {
@@ -18,7 +18,5 @@ class ApiRoute {
   }
 }
 
-module.exports = {
-  ApiRoute,
-  apiRoute: new ApiRoute(),
-};
+export const apiRoute = new ApiRoute();
+export default { ApiRoute, apiRoute };

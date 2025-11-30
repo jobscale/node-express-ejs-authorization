@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 class UserValidation {
   register(req, res, next) {
@@ -26,7 +26,5 @@ class UserValidation {
   }
 }
 
-module.exports = {
-  UserValidation,
-  userValidation: new UserValidation(),
-};
+export const userValidation = new UserValidation();
+export default { UserValidation, userValidation };

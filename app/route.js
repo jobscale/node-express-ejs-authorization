@@ -1,10 +1,10 @@
-const { Router } = require('express');
-const { apiRoute } = require('./api/route');
-const { authRoute } = require('./auth/route');
-const { accountRoute } = require('./account/route');
-const { userRoute } = require('./user/route');
-const { templateRoute } = require('./template/route');
-const { controller } = require('./controller');
+import { Router } from 'express';
+import { apiRoute } from './api/route.js';
+import { authRoute } from './auth/route.js';
+import { accountRoute } from './account/route.js';
+import { userRoute } from './user/route.js';
+import { templateRoute } from './template/route.js';
+import { controller } from './controller.js';
 
 class Route {
   constructor() {
@@ -37,7 +37,5 @@ class Route {
   }
 }
 
-module.exports = {
-  Route,
-  route: new Route(),
-};
+export const route = new Route();
+export default { Route, route };

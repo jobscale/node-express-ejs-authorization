@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const { templateController } = require('./controller');
+import { Router } from 'express';
+import { templateController } from './controller.js';
 
 class TemplateRoute {
   constructor() {
@@ -12,7 +12,5 @@ class TemplateRoute {
   }
 }
 
-module.exports = {
-  TemplateRoute,
-  templateRoute: new TemplateRoute(),
-};
+export const templateRoute = new TemplateRoute();
+export default { TemplateRoute, templateRoute };

@@ -1,7 +1,7 @@
-const createHttpError = require('http-errors');
-const { auth } = require('../auth');
-const { createHash } = require('../user');
-const User = require('../models/User');
+import createHttpError from 'http-errors';
+import { auth } from '../auth.js';
+import { createHash } from '../user.js';
+import User from '../models/User.js';
 
 class AccountService {
   async password(rest) {
@@ -23,7 +23,5 @@ class AccountService {
   }
 }
 
-module.exports = {
-  AccountService,
-  accountService: new AccountService(),
-};
+export const accountService = new AccountService();
+export default { AccountService, accountService };

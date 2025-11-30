@@ -1,4 +1,4 @@
-const jws = require('jws');
+import jws from 'jws';
 
 const alg = 'HS384';
 const complement = {
@@ -26,7 +26,5 @@ class Auth {
   }
 }
 
-module.exports = {
-  Auth,
-  auth: new Auth(),
-};
+export const auth = new Auth();
+export default { Auth, auth };

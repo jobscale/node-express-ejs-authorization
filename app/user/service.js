@@ -1,6 +1,6 @@
-const createHttpError = require('http-errors');
-const User = require('../models/User');
-const { createHash } = require('.');
+import createHttpError from 'http-errors';
+import User from '../models/User.js';
+import { createHash } from './index.js';
 
 class UserService {
   async now() {
@@ -50,7 +50,5 @@ class UserService {
   }
 }
 
-module.exports = {
-  UserService,
-  userService: new UserService(),
-};
+export const userService = new UserService();
+export default { UserService, userService };

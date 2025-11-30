@@ -1,4 +1,4 @@
-const path = require('path');
+import path from 'path';
 
 const loader = require;
 const db = {
@@ -29,7 +29,5 @@ class User {
   }
 }
 
-module.exports = {
-  User,
-  userModel: new User(),
-};
+export const userModel = new User();
+export default { User, userModel };

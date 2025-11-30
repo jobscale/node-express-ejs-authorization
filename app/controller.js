@@ -1,4 +1,4 @@
-const { service } = require('./service');
+import { service } from './service.js';
 
 class Controller {
   page(req, res) {
@@ -9,7 +9,5 @@ class Controller {
   }
 }
 
-module.exports = {
-  Controller,
-  controller: new Controller(),
-};
+export const controller = new Controller();
+export default { Controller, controller };

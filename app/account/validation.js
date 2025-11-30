@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 class AccountValidation {
   password(req, res, next) {
@@ -13,7 +13,5 @@ class AccountValidation {
   }
 }
 
-module.exports = {
-  AccountValidation,
-  accountValidation: new AccountValidation(),
-};
+export const accountValidation = new AccountValidation();
+export default { AccountValidation, accountValidation };

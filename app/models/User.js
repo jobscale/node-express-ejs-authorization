@@ -1,10 +1,10 @@
-const Sequelize = require('sequelize');
+import Sequelize from 'sequelize';
 
-const { database } = require('../../config/database');
+import { database } from '../../config/database.js';
 
 const tableName = 'user';
 
-module.exports = database.define(tableName, {
+export default database.define(tableName, {
   login: {
     type: Sequelize.STRING,
     primaryKey: true,
