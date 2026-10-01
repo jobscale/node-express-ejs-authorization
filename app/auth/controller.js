@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { logger } from '@jobscale/logger';
+import { logger } from '@jobscale/create-logger';
 import { authService } from './service.js';
 
 class AuthController {

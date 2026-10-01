@@ -3,7 +3,7 @@ import path from 'path';
 import createHttpError from 'http-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import { logger } from '@jobscale/logger';
+import { logger } from '@jobscale/create-logger';
 import { route } from './route.js';
 
 const app = express();

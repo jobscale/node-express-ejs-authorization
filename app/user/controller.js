@@ -1,5 +1,5 @@
 import path from 'path';
-import { logger } from '@jobscale/logger';
+import { logger } from '@jobscale/create-logger';
 import { userService } from './service.js';
 
 class UserController {

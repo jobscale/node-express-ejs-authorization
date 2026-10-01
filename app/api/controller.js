@@ -1,4 +1,4 @@
-import { logger } from '@jobscale/logger';
+import { logger } from '@jobscale/create-logger';
 import { apiService } from './service.js';
 
 class ApiController {

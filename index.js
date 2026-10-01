@@ -1,4 +1,4 @@
-import { logger } from '@jobscale/logger';
+import { logger } from '@jobscale/create-logger';
 import { App } from './app.js';
 import { database } from './config/database.js';
 import User from './app/models/User.js';
